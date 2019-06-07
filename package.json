@@ -30,7 +30,7 @@
     "o2m-dev": "nodemon -w src/worker/order_to_magento2.js --exec \"node src/worker/order_to_magento2.js\"",
     "migrate": "node node_modules/migrate/bin/migrate",
     "prestart": "npm run -s build",
-    "test:api": "mocha -r ts-node/register test/**/*spec.ts",
+    "test": "mocha -r ts-node/register test/**/*spec.ts",
     "setup": "npm run restore; npm run migrate",
     "lint": "eslint --ext .js src migrations scripts"
   },
