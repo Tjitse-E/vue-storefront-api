@@ -11,6 +11,7 @@ install:
 
 jobs:
   include:
+
     - stage: Build
       script:
         - yarn lint
@@ -19,4 +20,12 @@ jobs:
     - script:
         - yarn lint
         - yarn build
+      node_js: "10"
+
+    - stage: Test
+      script: yarn test
+      node_js: "8"
+
+    - stage: Test
+      script: yarn test
       node_js: "10"
