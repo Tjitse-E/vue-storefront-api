@@ -18,9 +18,7 @@ describe('Mail service token request', () => {
     expect(typeof token === "string").to.equal(true)
   })
 
-  /*
-  it('should return token and status 200', async () => {
-
+  it('should return not in whitelist and status 500', async () => {
     const host = config.get('server.host')
     const port = config.get('server.port')
     const tokenResponse = await chai.request(`${host}:${port}`)
@@ -30,12 +28,16 @@ describe('Mail service token request', () => {
     const mailResponse = await chai.request(`${host}:${port}`)
       .post('/api/ext/mail-service/send-email')
       .send({
-        'token': token
+        'token': token,
+        'sourceAddress': 'not-in-whitelist@vuestorefront.io',
+        'targetAddress': 'not-in-whitelist@vuestorefront.io',
+
       })
 
-    expect(mailResponse.body.code).to.equal(200)
+    expect(mailResponse.body.code).to.equal(500)
+    expect(mailResponse.body.result).to.equal('Target email address (not-in-whitelist@vuestorefront.io) is not from the whitelist!')
   })
-  */
+
 })
 
 
