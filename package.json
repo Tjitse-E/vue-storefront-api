@@ -31,7 +31,7 @@
     "migrate": "node node_modules/migrate/bin/migrate",
     "prestart": "npm run -s build",
     "test": "mocha -r ts-node/register src/**/*spec.ts",
-    "test:ci": "start-server-and-test dev test",
+    "test:ci": "start-server-and-test nodemon :8080/api test",
     "setup": "npm run restore; npm run migrate",
     "lint": "eslint --ext .js src migrations scripts"
   },
