@@ -23,9 +23,9 @@ jobs:
       node_js: "10"
 
     - stage: Test
-      script: yarn test
+      script: yarn test:ci
       node_js: "8"
 
     - stage: Test
-      script: yarn test
+      script: yarn test:ci
       node_js: "10"
