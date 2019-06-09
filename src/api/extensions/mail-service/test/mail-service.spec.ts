@@ -18,7 +18,7 @@ describe('Testing mail service token endpoint', () => {
   })
 })
 
-describe('Testing mail service send-email endpont', () => {
+describe('Testing mail service send-email endpoint', () => {
 
   it('should return not in whitelist and status 500', async () => {
 
