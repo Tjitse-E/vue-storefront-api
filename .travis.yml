@@ -11,21 +11,20 @@ install:
 
 jobs:
   include:
-
-    - stage: Build
+    - &build
+      stage: Build
       script:
-        - yarn lint
-        - yarn build
-      node_js: "8"
-    - script:
-        - yarn lint
-        - yarn build
-      node_js: "10"
+      - yarn lint
+      - yarn build
+      node_js: '10'
 
-    - stage: Test
+    - <<: *build
+      node_js: '8'
+
+    - &test
+      stage: Test
       script: yarn test:ci
       node_js: "8"
 
-    - stage: Test
-      script: yarn test:ci
+    - <<: *test
       node_js: "10"
