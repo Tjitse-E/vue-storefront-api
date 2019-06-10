@@ -21,3 +21,13 @@ jobs:
     - <<: *build
       node_js: '8'
 
+    - stage: Test
+      name: Test without inspect
+      script:
+      - yarn test
+
+    - stage: Test
+      name: Test with inspect
+      script:
+      - yarn test:inspect
+
