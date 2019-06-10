@@ -25,9 +25,11 @@ jobs:
       name: Test without inspect
       script:
       - yarn test
+      node_js: '10'
 
     - stage: Test
       name: Test with inspect
       script:
       - yarn test:inspect
+      node_js: '10'
 
